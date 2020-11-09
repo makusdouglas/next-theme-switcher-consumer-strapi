@@ -14,6 +14,11 @@ export const Container = styled.div`
     color: ${props => props.theme.colors.primary};
     margin-top: 40px;
   }
+  h2 {
+    font-size: 54px;
+    color: ${props => props.theme.colors.secondary};
+    margin-top: 40px;
+  }
 
   p {
     margin-top: 24px;

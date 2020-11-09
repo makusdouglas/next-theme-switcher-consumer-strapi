@@ -11,9 +11,8 @@ const Home: React.FC = () => {
       <Head>
         <title>Homepage</title>
       </Head>
-
-      <RocketseatLogo />
-      <h1>ReactJS Structure</h1>
+      <h1>Primary color</h1>
+      <h2>Secondary color</h2>
       <p>A ReactJS + Next.js structure made by Rocketseat.</p>
     </Container>
   )

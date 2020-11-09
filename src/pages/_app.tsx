@@ -3,11 +3,13 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/global'
-import theme from '../styles/theme'
+import { darkTheme, lightTheme } from '../styles/theme'
+import { NextPage } from 'next'
+import { type } from 'os'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <Component {...pageProps} />
       <GlobalStyle />
     </ThemeProvider>
