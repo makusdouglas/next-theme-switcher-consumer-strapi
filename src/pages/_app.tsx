@@ -1,19 +1,24 @@
 import React from 'react'
 import { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
-
-import GlobalStyle from '../styles/global'
-import { darkTheme, lightTheme } from '../styles/theme'
 import { NextPage } from 'next'
-import { type } from 'os'
+import GlobalStyle from '../styles/global'
+import Header from '../components/Header'
+import { CookiesProvider } from 'react-cookie'
+import {RecoilRoot } from 'recoil';
+import ConfigTheme from './_configTheme' 
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+  
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Component {...pageProps} />
-      <GlobalStyle />
-    </ThemeProvider>
+    <RecoilRoot>
+    <CookiesProvider>
+    <ConfigTheme>
+          <Header />
+          <Component {...pageProps} />
+          <GlobalStyle />
+    </ConfigTheme>        
+    </CookiesProvider>
+    </RecoilRoot>
   )
 }
-
 export default MyApp
